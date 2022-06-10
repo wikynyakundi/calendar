@@ -1,0 +1,215 @@
+/* © 2017 Arthur McLean */
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+/**
+ * 1c7c54 - Medium green
+ * 73e2a7 - Mint
+ * eaf8da - Very light green
+ * def4c6 - Light green
+ * 1b512d - Dark green
+ * 0a1e11 - Very Dark green
+ * b1cf5f - Olive green
+ */
+
+html {
+    height: 100%;
+    font: 10px/1.5 'Open Sans', sans-serif; /* 10px base font size makes for easy rem calculations */
+}
+
+body {
+    font-size: 1.7rem;
+    min-height: 100%;
+    color: #0a1e11; /* Very Dark green */
+    background-color: #eaf8da; /* Very light green */
+}
+
+h1, #display_date {
+    color: #1b512d; /* Dark green */
+}
+
+a, a:link, a:visited, a:active {
+    color: #73e2a7; /* Mint */
+}
+
+a:hover {
+    color: #1c7c54; /* Medium green */
+}
+
+.footer a, .footer a:link, .footer a:visited, .footer a:active {
+    color: #b1cf5f; /* Olive green */
+}
+
+.footer a:hover {
+    color: #def4c6; /* Light green */
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+}
+
+#root > .row {
+    width: 100%;
+    max-width: inherit;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+main {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+#day_container {
+    overflow-y: scroll;
+}
+
+/* Always show the scroll bars on Mac, so users know there is content to scroll to */
+#day_container::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+}
+
+#day_container::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,.5);
+    -webkit-box-shadow: 0 0 1px rgba(255,255,255,.5);
+}
+
+.calendar-month {
+    border-collapse: collapse;
+}
+
+/* Override high specificity: */
+table.calendar-month tbody tr {
+    border: none;
+}
+
+.calendar-month tbody td {
+    cursor: pointer;
+    padding: 0;
+}
+
+.calendar-month tbody td div {
+    padding: .5rem .625rem .625rem; /* Move the td padding in here */
+    color: gray;
+    border: 1px solid #fefefe; /* Same as background, keeps days from jumping when applying the selected border below */
+    width: 100%;
+    height: 100%;
+}
+
+.calendar-month th,
+.calendar-month td {
+    text-align: center;
+}
+
+.calendar-month th.back {
+    text-align: left;
+}
+
+.calendar-month th.next {
+    text-align: right;
+}
+
+.calendar-month td div.current-month {
+    color: black;
+}
+
+.calendar-month td div.selected {
+    border: 1px solid gold;
+}
+
+.calendar-month td .badge {
+    font-size: 1.4rem;
+}
+
+.calendar-month tfoot td {
+    font-size: 1.2rem;
+    font-weight: normal;
+    line-height: 1.2;
+    text-align: left;
+    border: 1px solid #f1f1f1;
+}
+
+.calendar-month tfoot td .badge {
+    font-size: .8rem;
+}
+
+.hours {
+    overflow-y: scroll;
+}
+
+.hour {
+    border-bottom: 1px solid #73e2a7; /* Mint */
+    padding: .4rem 0;
+}
+
+.hour:last-of-type {
+    border-bottom: none;
+}
+
+.time {
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+/* Override the default button margin */
+.button {
+    margin-bottom: 0;
+}
+
+.hour .button {
+    font-size: 1.7rem;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+}
+
+.hour .button:hover, .hour .button:focus {
+    color: #b1cf5f; /* Olive green */
+}
+
+.hour .button.save {
+    color: #1c7c54; /* Medium green */
+}
+
+.hour .button.cancel {
+    color: dodgerblue;
+    margin-left: 5px;
+}
+
+.hour .button.remove {
+    color: crimson;
+}
+
+footer {
+    font-size: 1.4rem;
+    color: #73e2a7; /* Mint */
+    background-color: #1b512d; /* Dark green */
+    padding: 1rem;
+}
+
+@media print, screen and (min-width: 64em) {
+    /* Large Screens */
+    h1 {
+        font-size: 5rem;
+    }
+}
+
+@media screen and (min-width: 40em) and (max-width: 63.9375em) {
+    /* Medium Screens */
+    h1 {
+        font-size: 4rem;
+    }
+}
+
+@media screen and (max-width: 39.9375em) {
+    /* Small Screens */
+    h1 {
+        font-size: 3rem;
+    }
+}
