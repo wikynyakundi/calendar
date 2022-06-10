@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calendar Project by Arthur McLean</title>
+    <link rel="stylesheet" href="css/foundation.min.css">
+    <link rel="stylesheet" href="css/app.css">
+
+    <!-- Font Awesome: -->
+    <script src="https://use.fontawesome.com/0ad469e99e.js"></script>
+  </head>
+  <body>
+    <div id="root">
+      <header class="row align-self-top">
+        <div class="small-12 columns text-center">
+          <h1>Simple Calendar: <span id="display_day"></span></h1>
+        </div>
+      </header>
+
+      <main class="row align-self-top align-top align-spaced">
+        <section class="small-12 medium-6 large-5 columns" id="calendar_container">
+          <table class="calendar-month unstriped">
+            <thead>
+              <tr>
+                <th class="back">
+                  <a href>
+                    <span class="show-for-sr">Previous Month</span>
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                  </a>
+                </th>
+                <th colspan="5" id="display_date"></th>
+                <th class="next">
+                  <a href>
+                    <span class="show-for-sr">Next Month</span>
+                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                  </a>
+                </th>
+              </tr>
+              <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+              </tr>
+            </thead>
+            <tbody id="calendar-body">
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="5">
+                  Click a day to select it. <span class="badge">1</span> indicates events on the day.<br>
+                  Click items in the list to add or edit them.
+                </td>
+                <td colspan="2">
+                  Go to <button type="button" class="button" id="jump_to_today">Today</button>
+                </td>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+        
+        <section class="small-12 medium-6 large-7 columns" id="day_container">
+          <div class="row">
+            <div class="small-12 columns" id="hours"></div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="row align-self-bottom">
+        <div class="small-12 columns">
+          &copy; 2017 Arthur McLean. All rights reserved. Void where prohibited. TT&amp;L not included. May cause uncontrollable urge to hire this developer.
+        </div>
+        <div class="small-12 columns">
+          <a href id="create_events">Generate random events</a> &bull; <a href id="clear_events">Clear all events</a>
+        </div>
+      </footer>
+    </div>
+
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/foundation.js"></script>
+    <script src="js/vendor/moment.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>
